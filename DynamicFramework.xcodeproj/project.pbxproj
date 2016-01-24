@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACD213321C33E8C5003B47B9 /* FBHandoffLock.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD213311C33E8C5003B47B9 /* FBHandoffLock.h */; };
 		D719F29E1B73962E0090C2FB /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = D719F29D1B73962E0090C2FB /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D719F2B81B7396AF0090C2FB /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = D719F29D1B73962E0090C2FB /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D719F2C71B7396E10090C2FB /* FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = D719F2C11B7396E10090C2FB /* FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACD213311C33E8C5003B47B9 /* FBHandoffLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBHandoffLock.h; sourceTree = "<group>"; };
 		D719F2981B73962E0090C2FB /* KVOController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D719F29C1B73962E0090C2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = DynamicFramework/Info.plist; sourceTree = SOURCE_ROOT; };
 		D719F29D1B73962E0090C2FB /* KVOController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = KVOController.h; path = DynamicFramework/KVOController.h; sourceTree = SOURCE_ROOT; };
@@ -48,9 +50,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACD213301C33E655003B47B9 /* Customization */ = {
+			isa = PBXGroup;
+			children = (
+				ACD213311C33E8C5003B47B9 /* FBHandoffLock.h */,
+			);
+			name = Customization;
+			sourceTree = "<group>";
+		};
 		D719F28E1B73962D0090C2FB = {
 			isa = PBXGroup;
 			children = (
+				ACD213301C33E655003B47B9 /* Customization */,
 				D719F29A1B73962E0090C2FB /* KVOController */,
 				D719F2991B73962E0090C2FB /* Products */,
 			);
@@ -114,6 +125,7 @@
 				D719F2C81B7396E10090C2FB /* FBKVOController.h in Headers */,
 				D719F2B81B7396AF0090C2FB /* KVOController.h in Headers */,
 				D719F2CC1B7396E10090C2FB /* NSObject+FBKVOController.h in Headers */,
+				ACD213321C33E8C5003B47B9 /* FBHandoffLock.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +364,7 @@
 		D719F2BB1B7396AF0090C2FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -369,6 +382,7 @@
 		D719F2BC1B7396AF0090C2FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

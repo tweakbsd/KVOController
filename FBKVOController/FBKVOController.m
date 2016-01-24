@@ -11,6 +11,21 @@
 
 #import <libkern/OSAtomic.h>
 #import <objc/message.h>
+#import "FBHandoffLock.h"
+
+
+
+// NOTE: Code by Mario Ströhlein to override naive OSSpinLock usage
+
+#define OSSpinLock FBHandoffLock
+#define OSSpinLockLock(l) FBHandoffLockLock(l)
+#define OSSpinLockUnlock(l) FBHandoffLockUnlock(l)
+#define OSSpinLockTryLock(l) FBHandoffLockTryLock(l)
+#ifdef OS_SPINLOCK_INIT
+#undef OS_SPINLOCK_INIT
+#endif //OS_SPINLOCK_INIT
+#define OS_SPINLOCK_INIT FB_HANDOFF_LOCK_INIT
+
 
 #if !__has_feature(objc_arc)
 #error This file must be compiled with ARC. Convert your project to ARC or specify the -fobjc-arc flag.

@@ -15,7 +15,7 @@
  @param object The object changed.
  @param change The change dictionary.
  */
-typedef void (^FBKVONotificationBlock)(id observer, id object, NSDictionary *change);
+typedef void (^FBKVONotificationBlock)(id observer, id object, NSDictionary<NSString*, id> *change);
 
 
 /**
@@ -90,7 +90,7 @@ typedef void (^FBKVONotificationBlock)(id observer, id object, NSDictionary *cha
  @param block The block to execute on notification.
  @discussion On key-value change, the specified block is called. Inorder to avoid retain loops, the block must avoid referencing the KVO controller or an owner thereof. Observing an already observed object key path or nil results in no operation.
  */
-- (void)observe:(id)object keyPaths:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options block:(FBKVONotificationBlock)block;
+- (void)observe:(id)object keyPaths:(NSArray<NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options block:(FBKVONotificationBlock)block;
 
 /**
  @abstract Registers observer for key-value change notification.
@@ -100,7 +100,7 @@ typedef void (^FBKVONotificationBlock)(id observer, id object, NSDictionary *cha
  @param action The observer selector called on key-value change.
  @discussion On key-value change, the observer's action selector is called. The selector provided should take the form of -propertyDidChange, -propertyDidChange: or -propertyDidChange:object:, where optional parameters delivered will be KVO change dictionary and object observed. Observing nil or observing an already observed object's key path results in no operation.
  */
-- (void)observe:(id)object keyPaths:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options action:(SEL)action;
+- (void)observe:(id)object keyPaths:(NSArray<NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options action:(SEL)action;
 
 /**
  @abstract Registers observer for key-value change notification.
@@ -110,7 +110,7 @@ typedef void (^FBKVONotificationBlock)(id observer, id object, NSDictionary *cha
  @param context The context specified.
  @discussion On key-value change, the observer's -observeValueForKeyPath:ofObject:change:context: method is called. Observing an already observed object key path or nil results in no operation.
  */
-- (void)observe:(id)object keyPaths:(NSArray *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context;
+- (void)observe:(id)object keyPaths:(NSArray<NSString *> *)keyPaths options:(NSKeyValueObservingOptions)options context:(void *)context;
 
 
 /**
